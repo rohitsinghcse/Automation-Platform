@@ -11,7 +11,8 @@ public class DriverClass {
 //		JavaMailUtil.sendmail("newtechtrickstv@gmail.com");
 		
 		 int senderCount = 1;
-		  File myObj = new File("src\\main\\resources\\sender.txt");
+//		  File myObj = new File("src\\main\\resources\\sender.txt");
+		 File myObj = new File("sender.txt");
 		  Scanner myReader = new Scanner(myObj);
 	      while (myReader.hasNextLine()) {
 	        String data = myReader.nextLine();
@@ -27,3 +28,4 @@ public class DriverClass {
 	}
 
 }
+

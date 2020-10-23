@@ -38,7 +38,7 @@ public class JavaMailUtil {
 		properties.put("mail.smtp.host", "smtp.gmail.com");
 		properties.put("mail.smtp.port", "587");
 
-		File myObj = new File("src\\main\\resources\\receiver.txt");
+		File myObj = new File("receiver.txt");
 		Scanner myReader = new Scanner(myObj);
 		while (myReader.hasNextLine()) {
 			String data = myReader.nextLine();
@@ -69,7 +69,7 @@ public class JavaMailUtil {
 		message.setFrom(new InternetAddress("myAccountEmail"));
 		message.setRecipient(Message.RecipientType.TO, new InternetAddress(recepient));
 		message.setSubject(senderCount + " ROHIT SINGH " + recepientCount);
-		String content = new String(Files.readAllBytes(Paths.get("src\\main\\resources\\mailBody.txt")),
+		String content = new String(Files.readAllBytes(Paths.get("mailBody.txt")),
 				StandardCharsets.UTF_8);
 
 		// Create the message part
@@ -86,7 +86,7 @@ public class JavaMailUtil {
 
 		// Part two is attachment
 		messageBodyPart = new MimeBodyPart();
-		String filename = "src\\main\\resources\\attachment.txt";
+		String filename = "attachment.txt";
 		DataSource source = new FileDataSource(filename);
 		messageBodyPart.setDataHandler(new DataHandler(source));
 
