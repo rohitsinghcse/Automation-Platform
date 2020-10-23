@@ -69,8 +69,7 @@ public class JavaMailUtil {
 		message.setFrom(new InternetAddress("myAccountEmail"));
 		message.setRecipient(Message.RecipientType.TO, new InternetAddress(recepient));
 		message.setSubject(senderCount + " ROHIT SINGH " + recepientCount);
-		String content = new String(Files.readAllBytes(Paths.get("mailBody.txt")),
-				StandardCharsets.UTF_8);
+		String content = new String(Files.readAllBytes(Paths.get("mailBody.txt")), StandardCharsets.UTF_8);
 
 		// Create the message part
 		BodyPart messageBodyPart = new MimeBodyPart();
